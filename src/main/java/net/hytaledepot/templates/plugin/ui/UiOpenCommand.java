@@ -37,7 +37,7 @@ public final class UiOpenCommand extends AbstractCommand {
     if ("open".equals(action)) {
       result = uiService.openPage(ctx, state, heartbeatService.ticks());
     } else {
-      String sender = String.valueOf(ctx.sender().getDisplayName());
+      String sender = String.valueOf(ctx.sender().getUsername());
       result = uiService.handleAction(state, sender, action, heartbeatService.ticks());
     }
     ctx.sendMessage(Message.raw(result));

@@ -21,7 +21,7 @@ public final class UiStatusCommand extends AbstractCommand {
   @Override
   protected CompletableFuture<Void> execute(CommandContext ctx) {
     state.incrementStatusRequests();
-    String sender = String.valueOf(ctx.sender().getDisplayName());
+    String sender = String.valueOf(ctx.sender().getUsername());
 
     long uptimeSeconds = 0L;
     if (state.getStartedAtEpochMillis() > 0L) {
